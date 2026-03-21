@@ -1,0 +1,454 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<title>Hitesh Dasturia — Resume</title>
+
+<style>
+
+/* ── EXACT match to original PDF ── */
+*, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+
+:root {
+  --navy:     #1e2d3d;   /* top bar */
+  --teal:     #2980b9;   /* section headings */
+  --edu:      #27ae60;   /* education left border — green */
+  --frontend: #8e44ad;   /* frontend left border — purple */
+  --blue:     #2980b9;   /* skills left border */
+  --dark:     #2c3e50;   /* name */
+  --body:     #444444;   /* body text */
+  --muted:    #666666;
+  --bg:       #ecf0f1;   /* outer background */
+  --card:     #ffffff;
+  --pill-bg:  #f0f3f5;   /* skill pill background */
+  --pill-br:  #dde3e8;   /* skill pill border */
+}
+
+html { font-size: 13px; }
+
+body {
+  background: var(--bg);
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: 400;
+  color: var(--body);
+  min-height: 100vh;
+}
+
+/* ── OUTER WRAPPER ── */
+.page {
+  max-width: 860px;
+  margin: 0 auto;
+  background: var(--card);
+  position: relative;
+}
+
+/* ── TOP NAVY BAR ── */
+.top-bar {
+  background: var(--navy);
+  height: 8px;
+  width: 100%;
+}
+
+/* ── CONTENT AREA ── */
+.content {
+  padding: 26px 52px 16px 52px;
+}
+
+/* ── NAME BLOCK ── */
+.name-block { margin-bottom: 10px; }
+
+.name-block h1 {
+  font-size: 1.85rem;
+  font-weight: 700;
+  color: var(--dark);
+  letter-spacing: 0.02em;
+  margin-bottom: 6px;
+}
+
+.contact-line {
+  font-size: 0.78rem;
+  color: var(--body);
+  margin-bottom: 3px;
+  line-height: 1.6;
+}
+.contact-line b { font-weight: 600; }
+
+/* ── DIVIDER LINE (under name) ── */
+.name-divider {
+  border: none;
+  border-top: 1.5px solid var(--teal);
+  margin: 12px 0 0 0;
+}
+
+/* ── SECTION ── */
+.section { margin-top: 15px; }
+
+.section-title {
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--teal);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 8px;
+}
+
+/* ── SUMMARY ── */
+.summary-text {
+  font-size: 0.82rem;
+  color: var(--body);
+  line-height: 1.75;
+}
+
+/* ── SKILLS GRID — grey pill with left blue border ── */
+.skills-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 7px;
+}
+
+.skill-pill {
+  background: var(--pill-bg);
+  border: 1px solid var(--pill-br);
+  border-left: 3px solid var(--blue);
+  padding: 7px 12px;
+  font-size: 0.78rem;
+  color: var(--body);
+  border-radius: 2px;
+}
+
+/* ── EDUCATION — left green border per item ── */
+.edu-item {
+  border-left: 3px solid var(--edu);
+  padding-left: 12px;
+  margin-bottom: 10px;
+}
+.edu-item:last-child { margin-bottom: 0; }
+
+.edu-title {
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--dark);
+}
+.edu-sub {
+  font-size: 0.78rem;
+  color: var(--body);
+  margin-top: 2px;
+  line-height: 1.55;
+}
+.edu-sub b { font-weight: 600; }
+
+/* ── PROJECTS — matching the original card style ── */
+/* Full Stack → teal/blue left border (matches skills) */
+/* Backend    → navy left border                       */
+/* Frontend   → green left border (matches education)  */
+
+.proj-item {
+  border-left: 3px solid var(--teal);
+  padding-left: 12px;
+  margin-bottom: 10px;
+}
+.proj-item:last-child { margin-bottom: 0; }
+.proj-item.backend  { border-left-color: var(--navy); }
+.proj-item.frontend { border-left-color: var(--frontend); }
+
+.proj-header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 8px;
+}
+.proj-name {
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--dark);
+}
+.proj-tech-old {
+  display: none;
+}
+.proj-bullets {
+  list-style: none;
+  padding: 0;
+}
+.proj-bullets li {
+  font-size: 0.78rem;
+  color: var(--body);
+  line-height: 1.6;
+  padding-left: 12px;
+  position: relative;
+  margin-bottom: 2px;
+}
+.proj-bullets li::before {
+  content: '•';
+  position: absolute;
+  left: 0;
+  color: var(--teal);
+}
+
+/* ── STRENGTHS — bullet list matching original ── */
+.strength-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 6px;
+  margin-bottom: 6px;
+  font-size: 0.82rem;
+}
+.strength-row::before {
+  content: '•';
+  color: var(--body);
+  flex-shrink: 0;
+  margin-top: 0;
+}
+.strength-row b { font-weight: 600; }
+
+/* ── PROJ TYPE BADGE — highlighted ── */
+.proj-type {
+  font-size: 0.68rem !important;
+  font-style: normal !important;
+  font-weight: 700 !important;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
+  padding: 2px 8px;
+  border-radius: 3px;
+  white-space: nowrap;
+}
+.proj-item.fullstack .proj-type {
+  background: rgba(41,128,185,0.12);
+  color: #1a6fa0;
+  border: 1px solid rgba(41,128,185,0.3);
+}
+.proj-item.backend .proj-type {
+  background: rgba(30,45,61,0.1);
+  color: #1e2d3d;
+  border: 1px solid rgba(30,45,61,0.25);
+}
+.proj-item.frontend .proj-type {
+  background: rgba(142,68,173,0.1);
+  color: #6c3483;
+  border: 1px solid rgba(142,68,173,0.3);
+}
+
+/* ── TECH TAGS — individual highlighted chips ── */
+.tech-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  margin: 4px 0 6px 0;
+}
+.tech-tag {
+  font-size: 0.68rem;
+  padding: 2px 7px;
+  border-radius: 3px;
+  font-weight: 600;
+  border: 1px solid;
+}
+/* Full Stack project tags — blue tones */
+.fullstack .tech-tag {
+  background: rgba(41,128,185,0.08);
+  color: #1a6fa0;
+  border-color: rgba(41,128,185,0.25);
+}
+/* Backend project tags — navy/dark tones */
+.backend .tech-tag {
+  background: rgba(30,45,61,0.07);
+  color: #2c3e50;
+  border-color: rgba(30,45,61,0.2);
+}
+/* Frontend project tags — purple tones */
+.frontend .tech-tag {
+  background: rgba(142,68,173,0.08);
+  color: #6c3483;
+  border-color: rgba(142,68,173,0.25);
+}
+
+/* ── PRINT ── */
+@media print {
+  body { background: white; }
+  .page { max-width: 100%; box-shadow: none; }
+  @page { margin: 0.6cm; size: A4; }
+}
+
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- TOP NAVY BAR -->
+  <div class="top-bar"></div>
+
+  <div class="content">
+
+    <!-- NAME & CONTACT -->
+    <div class="name-block">
+      <h1>HITESH DASTURIA</h1>
+      <div class="contact-line">
+        📞 <b>Phone:</b> 935576230 &nbsp;|&nbsp;
+        ✉ <b>Email:</b> hiteshdasturia@gmail.com &nbsp;|&nbsp;
+        🔗 <b>GitHub:</b> github.com/hitesh-dasturia
+      </div>
+      <div class="contact-line">
+        📍 <b>Address:</b> 18 Block 322, House No. Trilok Puri, New Delhi, Delhi
+      </div>
+    </div>
+    <hr class="name-divider"/>
+
+    <!-- PROFESSIONAL SUMMARY -->
+    <div class="section">
+      <div class="section-title">Professional Summary</div>
+      <div class="summary-text">
+        Detail-oriented Developer with expertise in <b>Full Stack Web Development</b>. Highly proficient in building
+        interactive front-end applications using <b>React.js</b> and designing robust back-end logic with
+        <b>Core and Advanced Java, Spring Boot, and Hibernate</b>. Committed to delivering clean, efficient code
+        and continuous learning.
+      </div>
+    </div>
+
+    <!-- TECHNICAL SKILLS -->
+    <div class="section">
+      <div class="section-title">Technical Skills</div>
+      <div class="skills-grid">
+        <div class="skill-pill">Frontend: HTML5, CSS3, JavaScript (ES6)</div>
+        <div class="skill-pill">Frameworks: React.js, Vite</div>
+        <div class="skill-pill">Backend: Core Java, Advanced Java, Spring Boot, Hibernate, Servlet, JSP</div>
+        <div class="skill-pill">Database: MySQL, JDBC, Spring Data JPA</div>
+        <div class="skill-pill">Tools: Maven, Git, GitHub, Apache Tomcat, Eclipse IDE</div>
+        <div class="skill-pill">Concepts: REST API, ORM, DAO Pattern, MVC</div>
+      </div>
+    </div>
+
+    <!-- PROJECTS -->
+    <div class="section">
+      <div class="section-title">Projects</div>
+
+      <!-- Full Stack -->
+      <div class="proj-item fullstack">
+        <div class="proj-header">
+          <span class="proj-name">Hospital Management System</span>
+          <span class="proj-type">Full Stack</span>
+        </div>
+        <div class="tech-tags">
+          <span class="tech-tag">React.js</span>
+          <span class="tech-tag">Vite</span>
+          <span class="tech-tag">Spring Boot</span>
+          <span class="tech-tag">Spring Data JPA</span>
+          <span class="tech-tag">MySQL</span>
+          <span class="tech-tag">REST API</span>
+          <span class="tech-tag">Axios</span>
+        </div>
+        <ul class="proj-bullets">
+          <li>Full-stack app for patient registration, doctor profiles &amp; appointment scheduling with role-based dashboards for Admin, Doctor, and Patient.</li>
+          <li>Built RESTful APIs in Spring Boot; React.js frontend communicates via Axios with CORS configuration.</li>
+        </ul>
+      </div>
+
+      <!-- Backend 1 -->
+      <div class="proj-item backend">
+        <div class="proj-header">
+          <span class="proj-name">Railway Reservation System</span>
+          <span class="proj-type">Backend</span>
+        </div>
+        <div class="tech-tags">
+          <span class="tech-tag">Java Servlet</span>
+          <span class="tech-tag">JSP</span>
+          <span class="tech-tag">JDBC</span>
+          <span class="tech-tag">MySQL</span>
+          <span class="tech-tag">Maven</span>
+          <span class="tech-tag">Apache Tomcat</span>
+        </div>
+        <ul class="proj-bullets">
+          <li>Complete railway booking system with train search, ticket booking &amp; e-ticket generation using DAO pattern.</li>
+          <li>Multi-page JSP interface (login, dashboard, booking forms) configured with Maven and deployed on Tomcat.</li>
+        </ul>
+      </div>
+
+      <!-- Backend 2 -->
+      <div class="proj-item backend">
+        <div class="proj-header">
+          <span class="proj-name">NexBank — Banking System</span>
+          <span class="proj-type">Backend</span>
+        </div>
+        <div class="tech-tags">
+          <span class="tech-tag">Hibernate</span>
+          <span class="tech-tag">Servlet</span>
+          <span class="tech-tag">JSP</span>
+          <span class="tech-tag">MySQL</span>
+          <span class="tech-tag">C3P0</span>
+          <span class="tech-tag">Maven</span>
+        </div>
+        <ul class="proj-bullets">
+          <li>Banking system with fund transfers, deposits, withdrawals, loan management &amp; EMI calculator across 5 entities.</li>
+          <li>Advanced Hibernate: Optimistic Locking (@Version), HQL queries, batch processing &amp; C3P0 connection pooling.</li>
+        </ul>
+      </div>
+
+      <!-- Frontend 1 -->
+      <div class="proj-item frontend">
+        <div class="proj-header">
+          <span class="proj-name">Grandmaster Chess</span>
+          <span class="proj-type">Frontend</span>
+        </div>
+        <div class="tech-tags">
+          <span class="tech-tag">HTML5</span>
+          <span class="tech-tag">CSS3</span>
+          <span class="tech-tag">JavaScript ES6</span>
+        </div>
+        <ul class="proj-bullets">
+          <li>Browser chess game vs. AI using Minimax + Alpha-Beta pruning with full rule support (castling, en passant, promotion).</li>
+          <li>Dark luxury UI with move history, captured pieces tracker &amp; 3 AI difficulty levels (Easy / Medium / Hard).</li>
+        </ul>
+      </div>
+
+      <!-- Frontend 2 -->
+      <div class="proj-item frontend">
+        <div class="proj-header">
+          <span class="proj-name">Login &amp; Register UI</span>
+          <span class="proj-type">Frontend</span>
+        </div>
+        <div class="tech-tags">
+          <span class="tech-tag">HTML5</span>
+          <span class="tech-tag">CSS3</span>
+        </div>
+        <ul class="proj-bullets">
+          <li>Auth UI with CSS-only tab switching between Login and Register, password strength indicator &amp; social login buttons.</li>
+        </ul>
+      </div>
+
+    </div>
+
+    <!-- EDUCATION & CERTIFICATIONS -->
+    <div class="section">
+      <div class="section-title">Education &amp; Certifications</div>
+
+      <div class="edu-item">
+        <div class="edu-title">Full Stack Web Development Certification | 2026</div>
+        <div class="edu-sub">Issued by: <b>Qspiders, Noida</b></div>
+      </div>
+
+      <div class="edu-item">
+        <div class="edu-title">Bachelor of Computer Applications (BCA) | 2022 – 2025</div>
+        <div class="edu-sub">Indira Gandhi National Open University (IGNOU)</div>
+        <div class="edu-sub">Result: <b>First Division</b></div>
+      </div>
+
+      <div class="edu-item">
+        <div class="edu-title">Intermediate (CBSE) - Evergreen Public School | 2022</div>
+        <div class="edu-sub">Percentage: <b>86%</b></div>
+      </div>
+
+      <div class="edu-item">
+        <div class="edu-title">Secondary School (CBSE) - Evergreen Public School | 2020</div>
+        <div class="edu-sub">Percentage: <b>71%</b></div>
+      </div>
+
+    </div>
+
+    <!-- STRENGTHS & LANGUAGES -->
+    <div class="section">
+      <div class="section-title">Strengths &amp; Languages</div>
+      <div class="strength-row"><span><b>Strengths:</b> &nbsp; Strong debugging skills, rapid learner, and effective team player with a positive attitude.</span></div>
+      <div class="strength-row"><span><b>Languages:</b> &nbsp; Hindi and English.</span></div>
+    </div>
+
+  </div><!-- /content -->
+</div><!-- /page -->
+</body>
+</html>
